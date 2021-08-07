@@ -13,8 +13,8 @@ if litros <= 18:
     print('Preço Total: R$ 80')
 else:
     qtd_latas = litros / 18
-    preço_total = qtd_latas * 80
+    preco_total = qtd_latas * 80
     print(f'Latas de Tintas a serem compradas --> {round(qtd_latas,2)}')
-    print(f'Preço Total --> R$ {round(preço_total,2)}')
+    print(f'Preço Total --> R$ {round(preco_total,2)}')
 
 
