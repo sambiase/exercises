@@ -11,3 +11,6 @@ print(f'Lista --> {lista}')
 print(f'ID da lista --> {id(lista)}')
 print(f'Tipo do objeto --> {type(lista)}')
 
+print(f'\nOpcao com List Comprehension --> {[int(i) for i in range(5)]}')
+
+

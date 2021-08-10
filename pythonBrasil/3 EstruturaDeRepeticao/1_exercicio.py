@@ -3,10 +3,14 @@
     seja inválido e continue pedindo até que o usuário informe um valor válido.
 '''
 
-nota = float(input('Digite uma nota entre 0 e 10 --> '))
-
-while nota < 0 or nota > 10:
-    print('Valor invalido')
-    nota = float(input('Digite uma nota entre 0 e 10 --> '))
-
-print('Valor valido')
+while True:
+    try:
+        nota = float(input('Digite uma nota entre 0 e 10 --> '))
+    except ValueError:
+        print('deve ser digitado um valor Float')
+    else:
+        if nota < 0 or nota > 10:
+            print('Valor invalido')
+        else:
+            print('Valor valido')
+            break

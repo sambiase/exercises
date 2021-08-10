@@ -7,6 +7,6 @@ lista = []
 for i in range(10):
     lista.append(i)
 
-lista.reverse()
-print(f'Ordem inversa da Lista --> {lista}')
+#lista.reverse()
+print(f'Ordem inversa da Lista --> {lista[::-1]}')
 
