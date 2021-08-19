@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2be6684-fe64-4053-afb1-eb75bbfabbd3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/2_exercicio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/15_exercicio.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/16_exercicio.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/17_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/17_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/5_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/5_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/4_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/4_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/7_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/7_exercicio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/15_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/15_exercicio.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,7 +31,7 @@
       <recent name="E:\14 - Dev\Python\Projetos\exercises\pythonBrasil\1 EstruturaSequencial" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.15_exercicio">
+  <component name="RunManager" selected="Python.16_exercicio">
     <configuration name="15_exercicio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="exercises" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -49,6 +45,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/15_exercicio.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="16_exercicio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="exercises" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/16_exercicio.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -99,27 +116,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="4_exercicio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="exercises" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/4_exercicio.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="7_exercicio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="exercises" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -143,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.16_exercicio" />
         <item itemvalue="Python.15_exercicio" />
         <item itemvalue="Python.2_exercicio" />
         <item itemvalue="Python.1_exercicio (1)" />
         <item itemvalue="Python.7_exercicio" />
-        <item itemvalue="Python.4_exercicio" />
       </list>
     </recent_temporary>
   </component>
@@ -181,13 +177,21 @@
       <option name="project" value="LOCAL" />
       <updated>1629211431092</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added Exercises">
+      <created>1629333930206</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1629333930206</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Pipfile" />
     <MESSAGE value="Added Exercise 10" />
     <MESSAGE value="Added Exercise 7" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Exercise 7" />
+    <MESSAGE value="Added Exercises" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Exercises" />
   </component>
 </project>

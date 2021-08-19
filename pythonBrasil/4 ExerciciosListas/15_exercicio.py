@@ -22,27 +22,19 @@ while True:
         break
 
 print(f'\nQuantidade de valores lidos --> {len(lista_de_notas)}')
-print(f'\nTodos os valores informados --> {lista_de_notas}')
+print(' '.join([str(nota) for nota in lista_de_notas]))
 lista_de_notas.reverse()
-soma = 0
+
 for _,v in enumerate(lista_de_notas):
     print(f'Todos os valores informados em ordem inversa --> {v}')
-    soma += v
 
-print(f'Soma dos valores --> {soma}')
+soma = sum(lista_de_notas)
+print(f'Soma dos valores --> {sum(lista_de_notas)}')
 media = soma / len(lista_de_notas)
 print(f'Media dos valores --> {round(media,2)}')
-qtd_valores_acima_da_media =0
-qtd_valores_abaixo_de_sete =0
-for _,valor in enumerate(lista_de_notas):
-    if valor > media:
-        qtd_valores_acima_da_media += 1
 
-print(f'Quantidade de Valores acima da Media --> {qtd_valores_acima_da_media}')
+print(f'Quantidade de Valores acima da Media --> {[str(nota) for nota in lista_de_notas if nota > media]}')
 
-for _,valor in enumerate(lista_de_notas):
-    if valor < 7:
-        qtd_valores_abaixo_de_sete += 1
-
-print(f'Quantidade de Valores abaixo de Sete --> {qtd_valores_abaixo_de_sete}')
+print(f'Quantidade de Valores abaixo de Sete --> {[str(nota) for nota in lista_de_notas if nota < 7]}')
 print(f'\n##############Programa Encerrado')
+
