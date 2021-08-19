@@ -1,3 +1,6 @@
+import math
+import math as mate
+
 '''
    Faça um Programa para uma loja de tintas. O programa deverá pedir o tamanho em metros quadrados da área a ser
    pintada. Considere que a cobertura da tinta é de 1 litro para cada 6 metros quadrados e que a tinta é vendida
@@ -11,5 +14,12 @@
 '''
 
 area = float(input('Tamanho em m2 da area a ser pintada --> '))
-litros = area / 6
+area_com_folga = area * 1.1
+litros = area_com_folga / 6
+numero_de_latas = litros / 18
+print (f'Litros a serem usados --> {litros}')
+print (f'Numero de latas --> {numero_de_latas}')
+print (f'Arrendondar para cima --> {math.ceil(numero_de_latas)}')
+
+
 

@@ -5,7 +5,5 @@
 maximo = float(input('Digite 1 numero --> '))
 
 for _ in range(5):
-    numero_max = max(maximo,float(input('Digite 1 numero --> ')))
+    numero_max = max(maximo, float(input('Digite 1 numero --> ')))          #compara os numeros e retorna o max
     print(f'Numero max encontrado ate o momento é --> {numero_max}')
-
-

@@ -11,7 +11,7 @@ nota2 = float(input('Digite a 2a nota: '))
 
 media = (nota1+nota2) / 2
 
-if media >= 7 and media == 10:
+if media == 10:
     print('Aprovado com Distincao')
 elif media >= 7:
     print('Aprovado')
