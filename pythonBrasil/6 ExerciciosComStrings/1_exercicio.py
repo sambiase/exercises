@@ -14,11 +14,15 @@
 str_1 = str(input('1a String --> '))
 str_2 = str(input('2a String --> '))
 
-print(f'Tamanho de {str_1}: {len(str_1)} caracteres')
-print(f'Tamanho de {str_2}: {len(str_2)} caracteres')
+print(f'Tamanho de "{str_1}": {len(str_1)} caracteres')
+print(f'Tamanho de "{str_2}": {len(str_2)} caracteres')
 
-if len(str_1) != len(str_2):
+if len(str_1) == len(str_2):
+    print('As duas strings são de tamanhos iguais.')
+else:
     print('As duas strings são de tamanhos diferentes.')
 
-if str_1 != str_2:
-    print('As duas strings possuem conteúdo diferente.')
+if str_1 == str_2:
+    print('As duas strings possuem conteúdo iguais.')
+else:
+    print('As duas strings possuem conteúdo diferentes.')

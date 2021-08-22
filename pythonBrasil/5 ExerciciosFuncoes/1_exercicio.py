@@ -11,16 +11,12 @@
 
 
 def calc(numero):
-    resto = int(numero/1)
-    for i in range(numero):
-
-        print (f'{resto}')
-
+    for i in range(1, numero + 1):
+        for _ in range(i):
+            print(f'{i}', end='   ')
+        print('')
 
 
 if __name__ == '__main__':
     numero = int(input('Digite um numero Inteiro --> '))
     calc(numero)
-
-
-
