@@ -16,20 +16,34 @@
 '''
 
 palavra = 'flamengo'.upper()
-count = 1
-letra = str(input('Digite uma letra: '))
+print('A palavra é: ', end='')
+erros = 0
 
+for letra in palavra:
+    print(f'_ ', end='')  # pista de quantas letras a palavra possui
 
-for char in palavra:
-    print (f'_ ', end='')
+conjunto_das_letras_palavra = set(palavra)
+conjunto_de_letras_digitadas = set()
 
+while (not conjunto_das_letras_palavra.issubset(conjunto_de_letras_digitadas)) and erros < 7:
+    print()
+    letra_digitada = str(input('Digite uma letra: ')).upper()
+    conjunto_de_letras_digitadas.add(letra_digitada)
+    if letra_digitada in conjunto_das_letras_palavra:
+        print('A palavra é: ', end='')
+        for letra in palavra:
+            if letra in conjunto_de_letras_digitadas:
+                print(f'{letra} ', end='')
+            else:
+                print('_ ', end='')
 
-'''
-while count <= 6:
-    letra = str(input('Digite uma letra --> '))
-    if letra not in palavra:
-        print(f'Voce errou pela {count}a vez. Tente de novo!')
+    else:
+        erros += 1
+        print(f'-> Você errou pela {erros}ª vez. Tente de novo!')
 
-    elif count == 6:
-        print(f'Voce errou pela {count}a vez! Game over :(')
-'''
+    print(f'\nLetras digitadas: {conjunto_de_letras_digitadas}', end='')
+
+if erros < 7:
+    print ('\nParabéns, você ganhou!')
+else:
+    print ('\nVocê perdeu :(')

@@ -1,111 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2be6684-fe64-4053-afb1-eb75bbfabbd3" name="Changes" comment="Added Exercises">
-      <change afterPath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/11_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/exercises.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/exercises.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="f2be6684-fe64-4053-afb1-eb75bbfabbd3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos/1_exercicio.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos/ips.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/.idea/pythonBrasil.iml" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/.idea/pythonBrasil.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/10_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/10_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/11_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/11_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/12_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/12_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/13_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/13_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/14_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/14_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/15_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/15_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/16_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/16_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/17_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/17_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/18_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/18_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/2_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/2_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/3_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/3_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/4_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/4_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/7_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/7_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/8_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/8_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/9_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/1 EstruturaSequencial/9_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/10_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/10_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/11_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/11_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/12_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/12_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/13_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/13_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/14_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/14_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/15_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/15_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/19_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/19_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/1_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/1_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/21_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/21_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/25_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/25_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/26_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/26_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/27_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/27_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/28_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/28_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/2_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/2_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/3_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/3_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/4_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/4_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/5_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/5_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/6_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/6_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/7_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/7_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/8_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/8_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/9_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/2 EstruturaDeDecisao/9_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/12_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/12_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/1_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/1_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/28_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/28_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/29_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/29_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/2_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/2_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/36_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/36_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/3_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/3_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/47_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/47_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/4_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/4_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/7_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/7_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/8_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/3 EstruturaDeRepeticao/8_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/15_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/15_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/16_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/16_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/1_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/1_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/2_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/2_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/3_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/3_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/4_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/4_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/5_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/5_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/7_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/7_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/5 ExerciciosFuncoes/11_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/5 ExerciciosFuncoes/11_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/5 ExerciciosFuncoes/1_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/5 ExerciciosFuncoes/1_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/5 ExerciciosFuncoes/3_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/5 ExerciciosFuncoes/3_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/5 ExerciciosFuncoes/4_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/5 ExerciciosFuncoes/4_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/5 ExerciciosFuncoes/5_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/5 ExerciciosFuncoes/5_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/12_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/12_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/1_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/1_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/2_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/2_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/3_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/3_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/4_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/4_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/5_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/5_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/6_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/6_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/7_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/7_exercicio.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/.idea/variousCodes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/.idea/variousCodes.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/button_Tkinter.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/button_Tkinter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/containers/listas/lista_chars.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/containers/listas/lista_chars.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/heranca/pessoa.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/heranca/pessoa.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/lambda/print_lambda.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/lambda/print_lambda.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/lambda/range_lambda.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/lambda/range_lambda.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/lambda/soma_lambda.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/lambda/soma_lambda.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/pyModules/guiTkinter.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/pyModules/guiTkinter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/pyModules/guiTkinter_V2.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/pyModules/guiTkinter_V2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/pyModules/guiTkinter_V3.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/pyModules/guiTkinter_V3.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/pyModules/guiTkinter_V4.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/pyModules/guiTkinter_V4.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/pyModules/guiTkinter_messagebox.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/pyModules/guiTkinter_messagebox.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/pyModules/logicaDeProgramacao.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/pyModules/logicaDeProgramacao.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/tests/test_assert.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/tests/test_assert.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/tryExcept/1_tryExcept.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/tryExcept/1_tryExcept.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/tryExcept/2_tryExcept.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/tryExcept/2_tryExcept.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/tryExcept/3_tryExcept.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/tryExcept/3_tryExcept.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/tryExcept/4_tryExcept.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/tryExcept/4_tryExcept.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/variousCodes/tryExcept/5_tryExcept.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/tryExcept/5_tryExcept.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/11_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/11_exercicio.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -118,17 +31,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\14 - Dev\Python\Projetos\exercises\pythonBrasil\7 ExerciciosArquivos" />
       <recent name="E:\14 - Dev\Python\Projetos\exercises\pythonBrasil\6 ExerciciosComStrings" />
       <recent name="E:\14 - Dev\Python\Projetos\exercises\pythonBrasil\4 ExerciciosListas" />
       <recent name="E:\14 - Dev\Python\Projetos\exercises\pythonBrasil\1 EstruturaSequencial" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.11_exercicio">
+  <component name="RunManager" selected="Python.1_exercicio (1)">
     <configuration name="11_exercicio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="exercises" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -150,7 +64,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="15_exercicio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="1_exercicio (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="exercises" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -158,32 +72,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/15_exercicio.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="16_exercicio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="exercises" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pythonBrasil/4 ExerciciosListas/16_exercicio.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos/1_exercicio.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -234,13 +127,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="5_exercicio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="exercises" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/5_exercicio.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.1_exercicio (1)" />
+        <item itemvalue="Python.5_exercicio" />
         <item itemvalue="Python.11_exercicio" />
         <item itemvalue="Python.1_exercicio (2)" />
         <item itemvalue="Python.1_exercicio" />
-        <item itemvalue="Python.16_exercicio" />
-        <item itemvalue="Python.15_exercicio" />
       </list>
     </recent_temporary>
   </component>
@@ -288,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629382481744</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Exercises">
+      <created>1629651448610</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1629651448610</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
