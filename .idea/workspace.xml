@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2be6684-fe64-4053-afb1-eb75bbfabbd3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos/1_exercicio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos/ips.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/11_exercicio.py" beforeDir="false" afterPath="$PROJECT_DIR$/pythonBrasil/6 ExerciciosComStrings/11_exercicio.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos/ips_saida.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,11 +20,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1wpRlkdhMM6H0Q2Vhre5pJi1fIN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos" />
@@ -209,10 +209,18 @@
       <option name="project" value="LOCAL" />
       <updated>1629651448610</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added Exercises">
+      <created>1629669493696</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1629669493697</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Added Pipfile" />
     <MESSAGE value="Added Exercise 10" />
     <MESSAGE value="Added Exercise 7" />
