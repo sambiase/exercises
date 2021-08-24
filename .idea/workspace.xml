@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2be6684-fe64-4053-afb1-eb75bbfabbd3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pythonBrasil/8 ExerciciosClasses/10_exercicio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pythonBrasil/8 ExerciciosClasses/1_exercicio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pythonBrasil/8 ExerciciosClasses/2_exercicio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pythonBrasil/8 ExerciciosClasses/4_exercicio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pythonBrasil/8 ExerciciosClasses/__init__.py" afterDir="false" />
+    <list default="true" id="f2be6684-fe64-4053-afb1-eb75bbfabbd3" name="Changes" comment="Added Exercises">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -243,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1629749927567</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added Exercises">
+      <created>1629830373296</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1629830373296</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
