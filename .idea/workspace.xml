@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f2be6684-fe64-4053-afb1-eb75bbfabbd3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos/2_exercicio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos/relatorio.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos/usuarios.txt" afterDir="false" />
+    <list default="true" id="f2be6684-fe64-4053-afb1-eb75bbfabbd3" name="Changes" comment="Added Exercises">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +33,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pythonBrasil/7 ExerciciosArquivos" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.splitter.proportion" value="0.27487683" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
