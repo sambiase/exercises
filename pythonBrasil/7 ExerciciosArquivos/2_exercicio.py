@@ -44,8 +44,8 @@ lista_de_dados = []
 with open('usuarios.txt', 'r') as arquivo_usuario:          #lê o arquivo usuarios.txt
     for linha in arquivo_usuario:
         linha = linha.strip()
-        usuario = linha[:15]  # 15 primeiros chars
-        bytes_consumidos = conv_bytes_to_mb(linha[16:])  # imprime depois dos 15 primeiros chars
+        usuario = linha[:15]                                # 15 primeiros chars
+        bytes_consumidos = conv_bytes_to_mb(linha[16:])     # imprime depois dos 15 primeiros chars
         lista_de_dados.append((usuario, bytes_consumidos))
 
 cabecalho = '''
@@ -59,8 +59,7 @@ with open('relatorio.txt', 'w') as arquivo_relatorio:
     espaco_total_ocupado = sum([tamanho for _, tamanho in lista_de_dados])  # soma os valores consumidos em MB
     media = espaco_total_ocupado / len(lista_de_dados)
     for indice, dados in enumerate(lista_de_dados):
-        usuario, bytes_consumidos = dados  # desempacotar a lista
-        calc_percentual()
+        usuario, bytes_consumidos = dados                                   # desempacotar a lista
         arquivo_relatorio.writelines(
             f'{indice + 1:<4} {usuario} {bytes_consumidos:9.2f} MB         {bytes_consumidos / espaco_total_ocupado:.2%}\n')
 
