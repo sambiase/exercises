@@ -65,9 +65,6 @@ class bombaCombustível:
        pass
 
 
-
-
-
 if __name__ == '__main__':
     bombaCombustível = bombaCombustível()
     print(f'Quantidade de litros colocados no veiculo --> {bombaCombustível.abastecerPorValor()}')
