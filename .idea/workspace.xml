@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2be6684-fe64-4053-afb1-eb75bbfabbd3" name="Changes" comment="Added Exercises">
-      <change afterPath="$PROJECT_DIR$/variousCodes/args_kwargs/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/variousCodes/args_kwargs/args.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/variousCodes/args_kwargs/args_and_kwargs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/variousCodes/args_kwargs/kwargs.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/variousCodes/containers/listas/print_names.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/variousCodes/map/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/variousCodes/map/map_example.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +55,7 @@
       <recent name="E:\14 - Dev\Python\Projetos\exercises\pythonBrasil\4 ExerciciosListas" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.print_names">
+  <component name="RunManager" selected="Python.map_example">
     <configuration name="args" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="exercises" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -101,27 +98,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="if_exercise" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="exercises" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/hackerRank" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hackerRank/if_exercise.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="kwargs" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="exercises" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -135,6 +111,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/variousCodes/args_kwargs/kwargs.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="map_example" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="exercises" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/variousCodes/map" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/variousCodes/map/map_example.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -166,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.map_example" />
         <item itemvalue="Python.print_names" />
         <item itemvalue="Python.args_and_kwargs" />
         <item itemvalue="Python.kwargs" />
         <item itemvalue="Python.args" />
-        <item itemvalue="Python.if_exercise" />
       </list>
     </recent_temporary>
   </component>
