@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2be6684-fe64-4053-afb1-eb75bbfabbd3" name="Changes" comment="Added Exercises">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/variousCodes/map/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/variousCodes/map/map_example.py" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/ifExample.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/variousCodes/lambda/lambda_sem_variavel.py" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/variousCodes/map/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/variousCodes/map/map_example.py" afterDir="false" />
+>>>>>>> 1c901b8457f6b403a26275ef5db1afbc4c078348
+>>>>>>> 8eb9315e7e8de5cecbfa8b19531e9998df210529
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/variousCodes/variavelGlobal.py" beforeDir="false" afterPath="$PROJECT_DIR$/variousCodes/variavelGlobal.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +48,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/pythonBrasil/8 ExerciciosClasses" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="preferences.updates" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -55,8 +66,18 @@
       <recent name="E:\14 - Dev\Python\Projetos\exercises\pythonBrasil\4 ExerciciosListas" />
     </key>
   </component>
+<<<<<<< HEAD
   <component name="RunManager" selected="Python.map_example">
     <configuration name="args" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+=======
+<<<<<<< HEAD
+  <component name="RunManager" selected="Python.lambda_sem_variavel">
+    <configuration name="10_exercicio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+=======
+  <component name="RunManager" selected="Python.map_example">
+    <configuration name="args" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+>>>>>>> 1c901b8457f6b403a26275ef5db1afbc4c078348
+>>>>>>> 8eb9315e7e8de5cecbfa8b19531e9998df210529
       <module name="exercises" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -98,7 +119,15 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <configuration name="kwargs" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+=======
+<<<<<<< HEAD
+    <configuration name="ifExample" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+=======
+    <configuration name="kwargs" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+>>>>>>> 1c901b8457f6b403a26275ef5db1afbc4c078348
+>>>>>>> 8eb9315e7e8de5cecbfa8b19531e9998df210529
       <module name="exercises" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -106,11 +135,27 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
+<<<<<<< HEAD
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/variousCodes/args_kwargs" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/variousCodes/args_kwargs/kwargs.py" />
+=======
+<<<<<<< HEAD
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ifExample.py" />
+=======
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/variousCodes/args_kwargs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/variousCodes/args_kwargs/kwargs.py" />
+>>>>>>> 1c901b8457f6b403a26275ef5db1afbc4c078348
+>>>>>>> 8eb9315e7e8de5cecbfa8b19531e9998df210529
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -119,7 +164,15 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+<<<<<<< HEAD
     <configuration name="map_example" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+=======
+<<<<<<< HEAD
+    <configuration name="lambda_sem_variavel" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+=======
+    <configuration name="map_example" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+>>>>>>> 1c901b8457f6b403a26275ef5db1afbc4c078348
+>>>>>>> 8eb9315e7e8de5cecbfa8b19531e9998df210529
       <module name="exercises" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -127,11 +180,25 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/variousCodes/lambda" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/variousCodes/lambda/lambda_sem_variavel.py" />
+=======
+>>>>>>> 8eb9315e7e8de5cecbfa8b19531e9998df210529
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/variousCodes/map" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/variousCodes/map/map_example.py" />
+<<<<<<< HEAD
+=======
+>>>>>>> 1c901b8457f6b403a26275ef5db1afbc4c078348
+>>>>>>> 8eb9315e7e8de5cecbfa8b19531e9998df210529
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -163,11 +230,25 @@
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        <item itemvalue="Python.lambda_sem_variavel" />
+        <item itemvalue="Python.ifExample" />
+        <item itemvalue="Python.variavelGlobal" />
+        <item itemvalue="Python.10_exercicio" />
+        <item itemvalue="Python.1_exercicio" />
+=======
+>>>>>>> 8eb9315e7e8de5cecbfa8b19531e9998df210529
         <item itemvalue="Python.map_example" />
         <item itemvalue="Python.print_names" />
         <item itemvalue="Python.args_and_kwargs" />
         <item itemvalue="Python.kwargs" />
         <item itemvalue="Python.args" />
+<<<<<<< HEAD
+=======
+>>>>>>> 1c901b8457f6b403a26275ef5db1afbc4c078348
+>>>>>>> 8eb9315e7e8de5cecbfa8b19531e9998df210529
       </list>
     </recent_temporary>
   </component>

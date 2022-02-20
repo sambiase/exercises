@@ -2,6 +2,7 @@
     Variavel Global vs Variavel Local
 '''
 
+
 nome = 'Andre'
 
 
