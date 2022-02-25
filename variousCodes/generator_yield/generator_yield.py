@@ -1,6 +1,7 @@
 def yield_example():
     for i in range(5):
-        yield print(i)
+        yield i
 
 
-next(yield_example())
+gen = yield_example()
+next(gen)
