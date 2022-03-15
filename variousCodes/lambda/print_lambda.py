@@ -1,3 +1,4 @@
-nome = 'Flamengo'
-print_name = lambda nome:nome
-print(print_name(nome))
+
+print_nome = lambda nome: print(f'Nome: {nome}')
+
+print_nome('Flamengo')
