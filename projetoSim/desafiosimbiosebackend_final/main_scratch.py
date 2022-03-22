@@ -1,7 +1,6 @@
 import json
 
 from flask import Flask, jsonify, request
-import pymysql
 import sqlalchemy
 from projetoSim.scratches import secrets
 from sqlalchemy.orm import declarative_base, sessionmaker
@@ -24,6 +23,8 @@ class Team(Base):
 
     def __repr__(self):
         return f'ID: {self.id}, Team Name: {self.team_name}'
+    #def to_dict(self):
+    #   return {self.id: getattr(self,self.id) for self in self.__tablename__.}
 
 
 # Table Creation on MySql
@@ -91,16 +92,24 @@ def register_recommendations():
 def get_all_teams():
     res = session.query(Team).all()
 
-    print(f'JSON RES: {res}')
 
-    return jsonify(res)
-
+    # Manual Solution
+    #resJson = f'{{"id":{res[2]}}}'
+    time = {
+        1:"Flamengo",
+        2:"Bota",
+        3:"Vasco"
+    }
+    #return jsonify(res)
+    return jsonify(time)
 
 @app.route('/recommendations', methods=['GET'])
 def get_all_recommendations():
     res = session.query(Recommendation).all()
 
-    return jsonify(res)
+    #print(resJson)
+
+    return jsonify(json.dumps([dict(r) for r in res]))
 
 
 @app.route('/recommendations/employees', methods=['GET'])
