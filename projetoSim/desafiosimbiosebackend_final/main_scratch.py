@@ -23,8 +23,6 @@ class Team(Base):
 
     def __repr__(self):
         return f'ID: {self.id}, Team Name: {self.team_name}'
-    #def to_dict(self):
-    #   return {self.id: getattr(self,self.id) for self in self.__tablename__.}
 
 
 # Table Creation on MySql
