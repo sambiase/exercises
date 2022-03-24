@@ -7,8 +7,8 @@ from flask_sqlalchemy import SQLAlchemy
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 
 from projetoSim.scratches import secrets
-from sqlalchemy.orm import declarative_base, sessionmaker
-from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import declarative_base, sessionmaker, relationship
+from sqlalchemy import Column, Integer, String, ForeignKey
 
 app = Flask(__name__)
 
@@ -21,37 +21,35 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 ma = Marshmallow(app)
 
 
-# TABLE CREATION ON MYSQL
+# TABLE CREATION ON MYSQL - EQUIPE
 class Team(Base):
     __tablename__ = 'teams'
 
     id = Column(Integer, primary_key=True, nullable=False)
     team_name = Column(String(50), nullable=False)
-
-    def __repr__(self):
-        return f'ID: {self.id}, Team Name: {self.team_name}'
+    employees = relationship('Employee', backref='teams')
 
 
-# TABLE CREATION ON MYSQL
+# TABLE CREATION ON MYSQL - INDICACOES
 class Recommendation(Base):
     __tablename__ = 'recommendations'
 
     id = Column(Integer, primary_key=True, nullable=False)
     recommendation = Column(String(50))
 
-    def __repr__(self):
-        return f'ID: {self.id}, Recommendation: {self.recommendation}'
 
-
-# TABLE CREATION ON MYSQL
+# TABLE CREATION ON MYSQL - FUNCIONARIOS
 class Employee(Base):
     __tablename__ = 'employees'
 
     id = Column(Integer, primary_key=True, nullable=False)
     employee_name = Column(String(50))
 
+    time_id = Column(Integer, ForeignKey('teams.id'))
+    time = relationship('Team')
+
     def __repr__(self):
-        return f'ID: {self.id}, Recommendations: {self.employee_name}'
+        return f'ID: {self.id} , Employee Name: {self.employee_name}'
 
 
 Base.metadata.create_all(engine)
@@ -93,9 +91,18 @@ def register_employees():
     # DATA GOTTEN FROM POST BODY JSON - POSTMAN
     request_data = request.get_json()
 
-    return_dict = {"example": "Register employees!"}
+    # CHECK IF TEAM NAME EXISTS
+    if "employee_name" not in request_data:
+        return {"status": 400, "message": "Employee Name is a mandatory field"}
+    else:
+        employee = Employee(id=request_data["id"], employee_name=request_data["employee_name"])
 
-    return jsonify(return_dict)
+        # INSERT DATA TO MYS(e possibilitar vincular a uma equipe)QL TABLE
+        session.add(employee)
+        session.commit()
+
+        # RETURN POSTED ON POSTMAN
+        return jsonify(request_data)
 
 
 @app.route('/recommendations', methods=['POST'])  # Registrar Indicações — OK
