@@ -44,6 +44,8 @@ class Team(Base):
 
     employees = relationship(Employee, backref='teams')
 
+    def __repr__(self):
+        return f'ID: {self.id}, Team Name: {self.team_name}, Employees: {self.employees}'
 
 # TABLE CREATION ON MYSQL - INDICACOES
 class Recommendation(Base):
@@ -127,7 +129,9 @@ def register_recommendations():
 
 @app.route('/teams', methods=['GET'])
 def get_all_teams():
-    res = session.query(Team).all()
+    res = session.query(Team, Employee).join(Team).all()
+    print('Results: ',res)
+    #res = session.query(Team).all()
     team_schema = TeamSchema()
     res_json = team_schema.dump(res, many=True)
     return jsonify(res_json)

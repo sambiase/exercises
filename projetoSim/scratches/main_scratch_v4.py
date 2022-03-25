@@ -91,7 +91,7 @@ def register_teams():
 def register_employees():
     # DATA GOTTEN FROM POST BODY JSON - POSTMAN
     request_data = request.get_json()
-    print ('REQUEST:',request_data)
+
     # CHECK IF EMPLOYEE NAME EXISTS
     if "employee_name" not in request_data:
         return {"status": 400, "message": "Employee Name is a mandatory field"}
