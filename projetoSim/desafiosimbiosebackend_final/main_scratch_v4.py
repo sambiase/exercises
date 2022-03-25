@@ -21,13 +21,28 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 ma = Marshmallow(app)
 
 
+# TABLE CREATION ON MYSQL - FUNCIONARIOS
+class Employee(Base):
+    __tablename__ = 'employees'
+
+    id = Column(Integer, primary_key=True, nullable=False)
+    employee_name = Column(String(50))
+
+    team_id = Column(Integer, ForeignKey('teams.id'))
+    team = relationship('Team')
+
+    def __repr__(self):
+        return f'ID: {self.id} , Employee Name: {self.employee_name}'
+
+
 # TABLE CREATION ON MYSQL - EQUIPE
 class Team(Base):
     __tablename__ = 'teams'
 
     id = Column(Integer, primary_key=True, nullable=False)
     team_name = Column(String(50), nullable=False)
-    employees = relationship('Employee', backref='teams')
+
+    employees = relationship(Employee, backref='teams')
 
 
 # TABLE CREATION ON MYSQL - INDICACOES
@@ -36,20 +51,6 @@ class Recommendation(Base):
 
     id = Column(Integer, primary_key=True, nullable=False)
     recommendation = Column(String(50))
-
-
-# TABLE CREATION ON MYSQL - FUNCIONARIOS
-class Employee(Base):
-    __tablename__ = 'employees'
-
-    id = Column(Integer, primary_key=True, nullable=False)
-    employee_name = Column(String(50))
-
-    time_id = Column(Integer, ForeignKey('teams.id'))
-    time = relationship('Team')
-
-    def __repr__(self):
-        return f'ID: {self.id} , Employee Name: {self.employee_name}'
 
 
 Base.metadata.create_all(engine)
@@ -82,7 +83,7 @@ def register_teams():
         session.add(teams)
         session.commit()
 
-        # RETURN POSTED ON POSTMAN
+        # RETURN POST ON POSTMAN
         return jsonify(request_data)
 
 
@@ -90,18 +91,19 @@ def register_teams():
 def register_employees():
     # DATA GOTTEN FROM POST BODY JSON - POSTMAN
     request_data = request.get_json()
-
-    # CHECK IF TEAM NAME EXISTS
+    print ('REQUEST:',request_data)
+    # CHECK IF EMPLOYEE NAME EXISTS
     if "employee_name" not in request_data:
         return {"status": 400, "message": "Employee Name is a mandatory field"}
     else:
-        employee = Employee(id=request_data["id"], employee_name=request_data["employee_name"])
+        employee = Employee(id=request_data["id"], employee_name=request_data["employee_name"],
+                            team_id=request_data["team_id"])
 
-        # INSERT DATA TO MYS(e possibilitar vincular a uma equipe)QL TABLE
+        # INSERT DATA TO MYSQL TABLE
         session.add(employee)
         session.commit()
 
-        # RETURN POSTED ON POSTMAN
+        # RETURN POST ON POSTMAN
         return jsonify(request_data)
 
 
