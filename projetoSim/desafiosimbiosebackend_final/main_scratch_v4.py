@@ -42,10 +42,13 @@ class Team(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     team_name = Column(String(50), nullable=False)
 
-    employees = relationship(Employee, backref='teams')
+    employees = relationship(Employee, backref='teams')  # Employee --> references Class Employee / backref references
+
+    # Table teams
 
     def __repr__(self):
         return f'ID: {self.id}, Team Name: {self.team_name}, Employees: {self.employees}'
+
 
 # TABLE CREATION ON MYSQL - INDICACOES
 class Recommendation(Base):
@@ -89,11 +92,11 @@ def register_teams():
         return jsonify(request_data)
 
 
-@app.route('/employees', methods=['POST'])
+@app.route('/employees', methods=['POST'])  # Registrar Funcionarios - OK
 def register_employees():
     # DATA GOTTEN FROM POST BODY JSON - POSTMAN
     request_data = request.get_json()
-    print ('REQUEST:',request_data)
+    print('REQUEST:', request_data)
     # CHECK IF EMPLOYEE NAME EXISTS
     if "employee_name" not in request_data:
         return {"status": 400, "message": "Employee Name is a mandatory field"}
@@ -114,10 +117,10 @@ def register_recommendations():
     # data gotten from POST BODY Json - Postman
     request_data = request.get_json()
 
-    if "recommendations" not in request_data:
+    if "recommendation" not in request_data:
         return {"status": 400, "recommendations": "Recommendation is a mandatory field"}
     else:
-        recommendations = Recommendation(id=request_data["id"], recommendations=request_data["recommendations"])
+        recommendations = Recommendation(id=request_data["id"], recommendation=request_data["recommendation"])
 
         # INSERT DATA TO MYSQL TABLE
         session.add(recommendations)
@@ -129,12 +132,18 @@ def register_recommendations():
 
 @app.route('/teams', methods=['GET'])
 def get_all_teams():
-    res = session.query(Team, Employee).join(Team).all()
-    print('Results: ',res)
-    #res = session.query(Team).all()
+    res = session.query(Team).join(Employee).filter(Team.id == Employee.team_id).all()
+    #res = session.query(Employee).join(Team).filter(Employee.team_id == Team.id).all()
+
+    lst_res = []
+    for i in range(0,len(res)):
+        lst_res.append(res[i])
+
+    print(f'RES: {lst_res}')
     team_schema = TeamSchema()
-    res_json = team_schema.dump(res, many=True)
-    return jsonify(res_json)
+    res_json = team_schema.dump(lst_res, many=True)
+    print('RESJSON: ', res_json)
+    return jsonify(lst_res)
 
 
 @app.route('/recommendations', methods=['GET'])  # Retornar uma lista de indicações — OK

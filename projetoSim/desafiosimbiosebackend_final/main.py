@@ -91,8 +91,6 @@ def register_recommendations():
 def get_all_teams():
     res = session.query(Team).all()
 
-    print(f'JSON RES: {res}')
-
     return jsonify(res)
 
 
