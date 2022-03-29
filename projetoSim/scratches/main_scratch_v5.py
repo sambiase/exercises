@@ -43,6 +43,7 @@ class Team(Base):
     team_name = Column(String(50), nullable=False)
 
     employees = relationship(Employee, backref='teams')  # Employee --> references Class Employee / backref references
+    #employees = relationship(Employee, backref='teams')  # Employee --> references Class Employee / backref references
 
     # Table teams
 
@@ -135,15 +136,11 @@ def get_all_teams():
     res = session.query(Team).join(Employee).filter(Team.id == Employee.team_id).all()
     #res = session.query(Employee).join(Team).filter(Employee.team_id == Team.id).all()
 
-    lst_res = []
-    for i in range(0,len(res)):
-        lst_res.append(res[i])
-
-    print(f'RES: {lst_res}')
+    print(f'RES: {res}')
     team_schema = TeamSchema()
-    res_json = team_schema.dump(lst_res, many=True)
+    res_json = team_schema.dump(res, many=True)
     print('RESJSON: ', res_json)
-    return jsonify(lst_res)
+    return jsonify(res_json)
 
 
 @app.route('/recommendations', methods=['GET'])  # Retornar uma lista de indicações — OK
