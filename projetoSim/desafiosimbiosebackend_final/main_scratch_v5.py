@@ -140,8 +140,8 @@ def register_recommendations():
 @app.route('/teams', methods=['GET'])
 def get_all_teams():
     team_schema = TeamSchema()
-    res = session.query(Team).join(Employee).filter(Team.id == Employee.team_id).all()
-    #res = session.query(Team).all()
+    #res = session.query(Team).join(Employee).filter(Team.id == Employee.team_id).all()
+    res = session.query(Team).all()
 
     print(f'RES: {res}')
     res_json = team_schema.dump(res, many=True)

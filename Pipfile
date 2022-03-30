@@ -12,6 +12,7 @@ mysql-connector = "*"
 flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
 flask-sqlalchemy = "*"
+pymysql = "*"
 
 [dev-packages]
 

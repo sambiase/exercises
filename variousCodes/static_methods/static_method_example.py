@@ -9,7 +9,6 @@ class Carro:
     def __init__(self):
         pass
 
-
     @staticmethod
     def print_carro():
         return f'Fiat'
