@@ -2,7 +2,8 @@ import json
 import sqlalchemy
 
 from flask import Flask, jsonify, request
-from flask_marshmallow import Marshmallow, fields
+from flask_marshmallow import Marshmallow
+from marshmallow import Schema, fields
 
 from flask_sqlalchemy import SQLAlchemy
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
@@ -10,6 +11,8 @@ from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 from projetoSim.scratches import secrets
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 from sqlalchemy import Column, Integer, String, ForeignKey
+
+from projetoSim.scratches.main_scratch_v3 import Employee
 
 app = Flask(__name__)
 
@@ -43,7 +46,8 @@ class Team(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     team_name = Column(String(50), nullable=False)
 
-    employees = relationship('Employee', back_populates='teams')  # Employee --> references Class Employee / backref references
+    employees = relationship('Employee',
+                             back_populates='teams')  # Employee --> references Class Employee / backref references
 
     def __repr__(self) -> str:
         return f'ID: {self.id}, Team Name: {self.team_name}, Employees: {self.employees}'
@@ -61,21 +65,23 @@ Base.metadata.create_all(engine)
 
 
 # SERIALIZED TABLE "TEAM" SCHEMA
-class TeamSchema(ma.SQLAlchemyAutoSchema):
+class TeamSchema(SQLAlchemyAutoSchema):
     class Meta:
         model = Team
-        fields = ('id','team_name')
 
 
-class EmployeeTeamSchema(ma.SQLAlchemyAutoSchema):
+# class EmployeeTeamSchema(ma.SQLAlchemyAutoSchema):
+class EmployeeTeamSchemaNested(SQLAlchemyAutoSchema):
+    #team_nested = fields.Nested(EmployeeSchema, many=True)
+
     class Meta:
-        model = Employee
-        fields = ('id','employee_name','team')
-
+        model = Team
+        #fields = ('id','employee_name')
+        include_relationships = True
 
 
 # SERIALIZED TABLE "RECOMMENDATION" SCHEMA
-class RecoSchema(ma.SQLAlchemyAutoSchema):
+class RecoSchema(SQLAlchemyAutoSchema):
     class Meta:
         model = Recommendation
 
@@ -139,12 +145,13 @@ def register_recommendations():
 
 @app.route('/teams', methods=['GET'])
 def get_all_teams():
-    team_schema = TeamSchema()
-    #res = session.query(Team).join(Employee).filter(Team.id == Employee.team_id).all()
-    res = session.query(Team).all()
-
+    team_employees = EmployeeTeamSchemaNested()
+    # team_schema = TeamSchema()
+    res = session.query(Team).join(Employee).filter(Team.id == Employee.team_id).all()
+    #res = session.query(Team).all()
     print(f'RES: {res}')
-    res_json = team_schema.dump(res, many=True)
+
+    res_json = team_employees.dump(res, many=True)
     print('RESJSON: ', res_json)
     return jsonify(res_json)
 
