@@ -37,7 +37,7 @@ class Employee(Base):
     recommendation_id = Column(Integer, ForeignKey('recommendations.id'))
     recommendations = relationship('Recommendation', back_populates='employees')
 
-    # recommendations = relationship('Recommendation', back_populates='employees')  # Employee --> references Class Employee
+
 
     def __repr__(self) -> str:
         return f'ID: {self.id} , Employee Name: {self.employee_name}'
