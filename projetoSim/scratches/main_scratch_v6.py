@@ -12,7 +12,6 @@ from projetoSim.scratches import secrets
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 from sqlalchemy import Column, Integer, String, ForeignKey
 
-
 app = Flask(__name__)
 
 engine = sqlalchemy.create_engine(f'mysql+pymysql://root:{secrets.password}@localhost/simChallenge', echo=True)
@@ -45,7 +44,8 @@ class Team(Base):
     id = Column(Integer, primary_key=True, nullable=False)
     team_name = Column(String(50), nullable=False)
 
-    employees = relationship('Employee',back_populates='teams')  # Employee --> references Class Employee / backref references
+    employees = relationship('Employee',
+                             back_populates='teams')  # Employee --> references Class Employee / backref references
 
     def __repr__(self) -> str:
         return f'ID: {self.id}, Team Name: {self.team_name}, Employees: {self.employees}'
@@ -63,23 +63,34 @@ Base.metadata.create_all(engine)
 
 
 # SERIALIZED TABLE "TEAM" SCHEMA
-class TeamSchema(ma.SQLAlchemyAutoSchema):
+class TeamSchema(SQLAlchemyAutoSchema):
     class Meta:
         model = Team
 
 
-# class EmployeeTeamSchema(ma.SQLAlchemyAutoSchema):
-class EmployeeTeamSchemaNested(ma.SQLAlchemyAutoSchema):
-    #team_nested = fields.Nested(TeamSchema, many=True)
-
+class EmployeeTeamSchemaNested(SQLAlchemyAutoSchema):
     class Meta:
         model = Team
-        #fields = ('id','employee_name')
+        # fields = ('id', 'team_name')
         include_relationships = True
 
 
+'''
+# class EmployeeTeamSchema(ma.SQLAlchemyAutoSchema):
+class EmployeeTeamSchemaNested(SQLAlchemyAutoSchema):
+    # team_nested = fields.Nested(TeamSchema, many=True)
+
+    class Meta:
+        # model = Team
+        model = Employee
+        fields = ('id', 'employee_name', 'team_id', 'teams')
+        include_relationships = True
+
+'''
+
+
 # SERIALIZED TABLE "RECOMMENDATION" SCHEMA
-class RecoSchema(ma.SQLAlchemyAutoSchema):
+class RecoSchema(SQLAlchemyAutoSchema):
     class Meta:
         model = Recommendation
 
@@ -145,8 +156,10 @@ def register_recommendations():
 def get_all_teams():
     team_employees = EmployeeTeamSchemaNested()
     # team_schema = TeamSchema()
-    #res = session.query(Team).join(Employee).filter(Team.id == Employee.team_id).all()
-    res = session.query(Team).all()
+    res = session.query(Team).join(Employee).filter(Team.id == Employee.team_id).order_by(Team.id).all()
+    # res = session.query(Employee).join(Team).filter(Employee.team_id == Team.id).all()
+    # res = session.query(Team,Employee).join('team_name').all()
+    # res = session.query(Team).order_by(Team.id).all()
     print(f'RES: {res}')
 
     res_json = team_employees.dump(res, many=True)
