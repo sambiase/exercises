@@ -1,6 +1,6 @@
-import pymysql.err
+
 import sqlalchemy
-from flask import Flask, jsonify, request, make_response
+from flask import Flask, jsonify, request, make_response, json
 from flask_marshmallow import Marshmallow
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 from projetoSim.scratches import secrets
@@ -109,7 +109,7 @@ def register_teams():
 
             # RETURN POST ON POSTMAN
             return make_response(jsonify({"status": 200, "message": "Team added successfully :)"}, request_data), 200)
-    except:
+    except Exception:
         session.rollback()
         return make_response(jsonify({"status": 200, "message": "Column 'TEAM_NAME' cannot be null"}), 200)
 
@@ -130,16 +130,17 @@ def register_employees():
             employee = Employee(id=request_data["id"], employee_name=request_data["employee_name"],
                                 team_id=request_data["team_id"], recommendation_id=request_data["recommendation_id"])
 
-            # INSERT DATA TO MYSQL TABLE
+            # INSERT DATA INTO MYSQL TABLE
             session.add(employee)
             session.commit()
             session.close()
 
             # RETURN POST ON POSTMAN
             return jsonify(request_data)
-    except:
+    except Exception:
         session.rollback()
         return make_response(jsonify({"status": 200, "message": "Column 'EMPLOYEE NAME' cannot be null"}), 200)
+
 
 # Registrar Indicações — OK
 @app.route('/recommendations', methods=['POST'])
@@ -155,7 +156,7 @@ def register_recommendations():
         else:
             recommendations = Recommendation(id=request_data["id"], recommendation=request_data["recommendation"])
 
-            # INSERT DATA TO MYSQL TABLE
+            # INSERT DATA INTO MYSQL TABLE
             session.add(recommendations)
             session.commit()
             session.close()
@@ -163,7 +164,7 @@ def register_recommendations():
             # RETURN ON POSTMAN
             return make_response(
                 jsonify({"status": 200, "message": "Recommendation added successfully :)"}, request_data), 200)
-    except:
+    except Exception:
         session.rollback()
         return make_response(jsonify({"status": 200, "message": "Column 'RECOMMENDATION' cannot be null"}), 200)
 
@@ -174,6 +175,7 @@ def get_all_teams():
     team_employees = EmployeeTeamSchemaNested()
     res = session.query(Team).join(Employee).filter(Team.id == Employee.team_id).order_by(Team.id).all()
     res_json = team_employees.dump(res, many=True)
+    # res2 = json.dumps(res, default=str)
     return make_response(jsonify(res_json), 200)
 
 
