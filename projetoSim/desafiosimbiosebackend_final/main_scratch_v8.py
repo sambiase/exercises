@@ -1,8 +1,8 @@
+import pymysql.err
 import sqlalchemy
 from flask import Flask, jsonify, request, make_response
 from flask_marshmallow import Marshmallow
 from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
-from requests import session
 from projetoSim.scratches import secrets
 from sqlalchemy.orm import declarative_base, sessionmaker, relationship
 from sqlalchemy import Column, Integer, String, ForeignKey
@@ -93,20 +93,25 @@ def register_teams():
     # DATA GOTTEN FROM POST BODY JSON - POSTMAN
     request_data = request.get_json()
 
-    # CHECK IF TEAM NAME WAS GIVEN
-    if "team_name" not in request_data:
-        session.close()
-        return make_response({"status": 400, "message": "Team Name is a mandatory field"}, 400)
+    try:
+        # CHECK IF TEAM NAME WAS GIVEN
+        if "team_name" not in request_data:
+            session.close()
+            return make_response({"status": 400, "message": "Team Name is a mandatory field"}, 400)
 
-    else:
-        teams = Team(id=request_data["id"], team_name=request_data["team_name"])
+        else:
+            teams = Team(id=request_data["id"], team_name=request_data["team_name"])
 
-        # INSERT DATA TO MYSQL TABLE
-        session.add(teams)
-        session.commit()
+            # INSERT DATA INTO MYSQL TABLE
+            session.add(teams)
+            session.commit()
+            session.close()
 
-        # RETURN POST ON POSTMAN
-        return make_response(jsonify({"status": 200, "message": "Team added successfully :)"},request_data), 200)
+            # RETURN POST ON POSTMAN
+            return make_response(jsonify({"status": 200, "message": "Team added successfully :)"}, request_data), 200)
+    except:
+        session.rollback()
+        return make_response(jsonify({"status": 200, "message": "Column 'TEAM_NAME' cannot be null"}), 200)
 
 
 # Registrar Funcionarios - OK
@@ -115,20 +120,26 @@ def register_employees():
     # DATA GOTTEN FROM POST BODY JSON - POSTMAN
     request_data = request.get_json()
 
-    # CHECK IF EMPLOYEE NAME EXISTS
-    if "employee_name" not in request_data:
-        return {"status": 400, "message": "Employee Name is a mandatory field"}
-    else:
-        employee = Employee(id=request_data["id"], employee_name=request_data["employee_name"],
-                            team_id=request_data["team_id"], recommendation_id=request_data['recommendation_id'])
+    try:
+        # CHECK IF EMPLOYEE NAME EXISTS
+        if "employee_name" not in request_data:
+            session.close()
+            return make_response({"status": 400, "message": "Employee Name is a mandatory field"}, 400)
 
-        # INSERT DATA TO MYSQL TABLE
-        session.add(employee)
-        session.commit()
+        else:
+            employee = Employee(id=request_data["id"], employee_name=request_data["employee_name"],
+                                team_id=request_data["team_id"], recommendation_id=request_data["recommendation_id"])
 
-        # RETURN POST ON POSTMAN
-        return jsonify(request_data)
+            # INSERT DATA TO MYSQL TABLE
+            session.add(employee)
+            session.commit()
+            session.close()
 
+            # RETURN POST ON POSTMAN
+            return jsonify(request_data)
+    except:
+        session.rollback()
+        return make_response(jsonify({"status": 200, "message": "Column 'EMPLOYEE NAME' cannot be null"}), 200)
 
 # Registrar Indicações — OK
 @app.route('/recommendations', methods=['POST'])
@@ -136,17 +147,25 @@ def register_recommendations():
     # data gotten from POST BODY Json - Postman
     request_data = request.get_json()
 
-    if "recommendation" not in request_data:
-        return {"status": 400, "recommendations": "Recommendation is a mandatory field"}
-    else:
-        recommendations = Recommendation(id=request_data["id"], recommendation=request_data["recommendation"])
+    try:
+        if "recommendation" not in request_data:
+            session.close()
+            return make_response({"status": 400, "message": "Recommendation is a mandatory field"}, 400)
 
-        # INSERT DATA TO MYSQL TABLE
-        session.add(recommendations)
-        session.commit()
+        else:
+            recommendations = Recommendation(id=request_data["id"], recommendation=request_data["recommendation"])
 
-        # RETURN ON POSTMAN
-        return jsonify(request_data)
+            # INSERT DATA TO MYSQL TABLE
+            session.add(recommendations)
+            session.commit()
+            session.close()
+
+            # RETURN ON POSTMAN
+            return make_response(
+                jsonify({"status": 200, "message": "Recommendation added successfully :)"}, request_data), 200)
+    except:
+        session.rollback()
+        return make_response(jsonify({"status": 200, "message": "Column 'RECOMMENDATION' cannot be null"}), 200)
 
 
 # Retornar uma lista de equipes e respectivos funcionários — OK
