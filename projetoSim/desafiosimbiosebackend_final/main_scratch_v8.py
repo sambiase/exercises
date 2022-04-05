@@ -172,11 +172,12 @@ def register_recommendations():
 # Retornar uma lista de equipes e respectivos funcionários — OK
 @app.route('/teams', methods=['GET'])
 def get_all_teams():
-    team_employees = EmployeeTeamSchemaNested()
+    #team_employees = EmployeeTeamSchemaNested()
     res = session.query(Team).join(Employee).filter(Team.id == Employee.team_id).order_by(Team.id).all()
-    res_json = team_employees.dump(res, many=True)
-    # res2 = json.dumps(res, default=str)
-    return make_response(jsonify(res_json), 200)
+    #res_json = team_employees.dump(res, many=True)
+    res2 = json.dumps(res, default=str)
+    #return make_response(jsonify(res_json), 200)
+    return make_response(jsonify(res2), 200)
 
 
 # Retornar uma lista de indicações — OK
@@ -194,6 +195,8 @@ def get_all_employees_with_recommendations():
     employees_reco = EmployeesRecoSchema()
     res = session.query(Recommendation).join(Employee).filter(Recommendation.id == Employee.team_id).all()
     res_json = employees_reco.dump(res, many=True)
+    #res2 = json.dumps(res, default=str)
+    #return make_response(jsonify(res2), 200)
     return make_response(jsonify(res_json), 200)
 
 
