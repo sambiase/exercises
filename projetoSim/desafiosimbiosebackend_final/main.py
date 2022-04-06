@@ -1,11 +1,10 @@
-import json
-
-from flask import Flask, jsonify, request
-import pymysql
 import sqlalchemy
+from flask import Flask, jsonify, request, make_response, json
+from flask_marshmallow import Marshmallow
+from marshmallow_sqlalchemy import SQLAlchemyAutoSchema
 from projetoSim.scratches import secrets
-from sqlalchemy.orm import declarative_base, sessionmaker
-from sqlalchemy import Column, Integer, String
+from sqlalchemy.orm import declarative_base, sessionmaker, relationship
+from sqlalchemy import Column, Integer, String, ForeignKey
 
 app = Flask(__name__)
 
@@ -14,98 +13,200 @@ Base = declarative_base()
 Session = sessionmaker(bind=engine)
 session = Session()
 
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+ma = Marshmallow(app)
 
-# Table Creation on MySql
+HTTP_RES_SUCCESSFUL = 201
+HTTP_RES_CLIENT_ERROR = 400
+
+
+# TABLE CREATION ON MYSQL - FUNCIONÁRIOS (EMPLOYEES)
+class Employee(Base):
+    __tablename__ = 'employees'
+
+    id = Column(Integer, primary_key=True, nullable=False)
+    employee_name = Column(String(50), nullable=False)
+
+    team_id = Column(Integer, ForeignKey('teams.id'))
+    teams = relationship('Team', back_populates='employees')
+
+    recommendation_id = Column(Integer, ForeignKey('recommendations.id'))
+    recommendations = relationship('Recommendation', back_populates='employees')
+
+    def __repr__(self) -> str:
+        return f'ID: {self.id} , Employee Name: {self.employee_name}'
+
+
+# TABLE CREATION ON MYSQL - EQUIPES  (TEAMS)
 class Team(Base):
     __tablename__ = 'teams'
 
     id = Column(Integer, primary_key=True, nullable=False)
-    team_name = Column(String(50))
+    team_name = Column(String(50), nullable=False)
 
-    def __repr__(self):
-        return f'ID: {self.id}, Team Name: {self.team_name}'
+    employees = relationship('Employee', back_populates='teams')  # Employee --> references Class Employee
+
+    def __repr__(self) -> str:
+        return f'ID: {self.id}, Team Name: {self.team_name}, Employees: {self.employees}'
 
 
-# Table Creation on MySql
+# TABLE CREATION ON MYSQL - INDICACOES (RECOMMENDATIONS)
 class Recommendation(Base):
     __tablename__ = 'recommendations'
 
     id = Column(Integer, primary_key=True, nullable=False)
-    recommendations = Column(String(50))
+    recommendation = Column(String(50), nullable=False)
 
-    def __repr__(self):
-        return f'ID: {self.id}, Recommendations: {self.recommendations}'
+    employees = relationship('Employee', back_populates='recommendations')  # Employee --> references Class Employee
 
 
 Base.metadata.create_all(engine)
 
 
+# SERIALIZED TABLE "TEAM" SCHEMA
+class TeamSchema(SQLAlchemyAutoSchema):
+    class Meta:
+        model = Team
+
+
+# SERIALIZED TABLE "RECOMMENDATION" SCHEMA
+class RecoSchema(SQLAlchemyAutoSchema):
+    class Meta:
+        model = Recommendation
+
+
+# NESTED SCHEMAS
+class EmployeeTeamSchemaNested(SQLAlchemyAutoSchema):
+    class Meta:
+        model = Team
+        include_relationships = True
+
+
+# NESTED SCHEMAS
+class EmployeesRecoSchema(SQLAlchemyAutoSchema):
+    class Meta:
+        model = Recommendation
+        include_relationships = True
+
+
+# Registrar Equipes(times) - OK
 @app.route('/teams', methods=['POST'])
 def register_teams():
-    # data gotten from POST BODY Json - Postman
+    # DATA GOTTEN FROM POST BODY JSON - POSTMAN
     request_data = request.get_json()
 
-    # check if team name exists
-    if "team_name" not in request_data:
-        return {"status": 400, "message": "ID and Team Name are mandatory fields"}
-    else:
-        teams = Team(id=request_data["id"], team_name=request_data["team_name"])
+    try:
+        # CHECK IF TEAM NAME WAS GIVEN
+        if "team_name" not in request_data:
+            session.close()
+            return make_response({"status": HTTP_RES_CLIENT_ERROR, "message": "Team Name is a mandatory field"},
+                                 HTTP_RES_CLIENT_ERROR)
 
-        # INSERT data to MySql Table
-        session.add(teams)
-        session.commit()
+        else:
+            teams = Team(id=request_data["id"], team_name=request_data["team_name"])
 
-        # return posted on Postman
-        return jsonify(request_data)
+            # INSERT DATA INTO MYSQL TABLE
+            session.add(teams)
+            session.commit()
+            session.close()
+
+            # RETURN POST ON POSTMAN
+            return make_response(jsonify({"status": HTTP_RES_SUCCESSFUL, "message": "Team added successfully :)"},
+                                         request_data), HTTP_RES_SUCCESSFUL)
+    except Exception:  # checks if value is NULL
+        session.rollback()
+        return make_response(jsonify({"status": HTTP_RES_CLIENT_ERROR, "message": "Column 'TEAM_NAME' cannot be null"}),
+                             HTTP_RES_CLIENT_ERROR)
 
 
+# Registrar Funcionarios - OK
 @app.route('/employees', methods=['POST'])
 def register_employees():
-    # data gotten from POST BODY Json - Postman
+    # DATA GOTTEN FROM POST BODY JSON - POSTMAN
     request_data = request.get_json()
 
-    return_dict = {"example": "Register employees!"}
+    try:
+        # CHECK IF EMPLOYEE NAME EXISTS
+        if "employee_name" not in request_data:
+            session.close()
+            return make_response({"status": HTTP_RES_CLIENT_ERROR, "message": "Employee Name is a mandatory field"},
+                                 HTTP_RES_CLIENT_ERROR)
 
-    return jsonify(return_dict)
+        else:
+            employee = Employee(id=request_data["id"], employee_name=request_data["employee_name"],
+                                team_id=request_data["team_id"], recommendation_id=request_data["recommendation_id"])
+
+            # INSERT DATA INTO MYSQL TABLE
+            session.add(employee)
+            session.commit()
+            session.close()
+
+            # RETURN POST ON POSTMAN
+            return make_response(jsonify({"status": HTTP_RES_SUCCESSFUL, "message": "Employee added successfully :)"},
+                                         request_data), HTTP_RES_SUCCESSFUL)
+    except Exception:
+        session.rollback()
+        return make_response(jsonify({"status": HTTP_RES_CLIENT_ERROR,
+                                      "message": "Column 'EMPLOYEE NAME' cannot be null"}), HTTP_RES_CLIENT_ERROR)
 
 
+# Registrar Indicações — OK
 @app.route('/recommendations', methods=['POST'])
 def register_recommendations():
     # data gotten from POST BODY Json - Postman
     request_data = request.get_json()
 
-    if "recommendations" not in request_data:
-        return {"status": 400, "recommendations": "Recommendation is a mandatory field"}
-    else:
-        recommendations = Recommendation(id=request_data["id"], recommendations=request_data["recommendations"])
+    try:
+        if "recommendation" not in request_data:
+            session.close()
+            return make_response({"status": HTTP_RES_CLIENT_ERROR, "message": "Recommendation is a mandatory field"},
+                                 HTTP_RES_CLIENT_ERROR)
 
-        # INSERT data to MySql Table
-        session.add(recommendations)
-        session.commit()
+        else:
+            recommendations = Recommendation(id=request_data["id"], recommendation=request_data["recommendation"])
 
-        # return on Postman
-        return jsonify(request_data)
+            # INSERT DATA INTO MYSQL TABLE
+            session.add(recommendations)
+            session.commit()
+            session.close()
+
+            # RETURN ON POSTMAN
+            return make_response(
+                jsonify({"status": HTTP_RES_SUCCESSFUL, "message": "Recommendation added successfully :)"},
+                        request_data), HTTP_RES_SUCCESSFUL)
+    except Exception:
+        session.rollback()
+        return make_response(jsonify({"status": HTTP_RES_CLIENT_ERROR, "message": "Column 'RECOMMENDATION' cannot be "
+                             "null"}), HTTP_RES_CLIENT_ERROR)
 
 
+# Retornar uma lista de equipes e respectivos funcionários — OK
 @app.route('/teams', methods=['GET'])
 def get_all_teams():
-    res = session.query(Team).all()
+    # team_employees = EmployeeTeamSchemaNested()
+    res = session.query(Team).join(Employee).filter(Team.id == Employee.team_id).order_by(Team.id).all()
+    # res_json = team_employees.dump(res, many=True)
+    res2 = json.dumps(res, default=str)
+    # return make_response(jsonify(res_json), 200)
+    return make_response(jsonify(res2), 200)
 
-    return jsonify(res)
 
-
+# Retornar uma lista de indicações — OK
 @app.route('/recommendations', methods=['GET'])
 def get_all_recommendations():
+    reco_schema = RecoSchema()
     res = session.query(Recommendation).all()
+    res_json = reco_schema.dump(res, many=True)
+    return make_response(jsonify(res_json), 200)
 
-    return jsonify(res)
 
-
+# Retornar quais funcionários realizaram indicações — OK
 @app.route('/recommendations/employees', methods=['GET'])
 def get_all_employees_with_recommendations():
-    return_dict = {"example": "List employees!"}
-
-    return jsonify(return_dict)
+    employees_reco = EmployeesRecoSchema()
+    res = session.query(Recommendation).join(Employee).filter(Recommendation.id == Employee.team_id).all()
+    res_json = employees_reco.dump(res, many=True)
+    return make_response(jsonify(res_json), 200)
 
 
 if __name__ == "__main__":
