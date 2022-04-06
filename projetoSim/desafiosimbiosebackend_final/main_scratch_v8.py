@@ -16,6 +16,9 @@ session = Session()
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 ma = Marshmallow(app)
 
+HTTP_RES_SUCCESSFUL = 201
+HTTP_RES_CLIENT_ERROR = 400
+
 
 # TABLE CREATION ON MYSQL - FUNCIONÁRIOS (EMPLOYEES)
 class Employee(Base):
@@ -96,7 +99,8 @@ def register_teams():
         # CHECK IF TEAM NAME WAS GIVEN
         if "team_name" not in request_data:
             session.close()
-            return make_response({"status": 400, "message": "Team Name is a mandatory field"}, 400)
+            return make_response({"status": HTTP_RES_CLIENT_ERROR, "message": "Team Name is a mandatory field"},
+                                 HTTP_RES_CLIENT_ERROR)
 
         else:
             teams = Team(id=request_data["id"], team_name=request_data["team_name"])
@@ -107,10 +111,12 @@ def register_teams():
             session.close()
 
             # RETURN POST ON POSTMAN
-            return make_response(jsonify({"status": 201, "message": "Team added successfully :)"}, request_data), 201)
+            return make_response(jsonify({"status": HTTP_RES_SUCCESSFUL, "message": "Team added successfully :)"},
+                                         request_data), HTTP_RES_SUCCESSFUL)
     except Exception:  # checks if value is NULL
         session.rollback()
-        return make_response(jsonify({"status": 400, "message": "Column 'TEAM_NAME' cannot be null"}), 400)
+        return make_response(jsonify({"status": HTTP_RES_CLIENT_ERROR, "message": "Column 'TEAM_NAME' cannot be null"}),
+                             HTTP_RES_CLIENT_ERROR)
 
 
 # Registrar Funcionarios - OK
@@ -123,7 +129,8 @@ def register_employees():
         # CHECK IF EMPLOYEE NAME EXISTS
         if "employee_name" not in request_data:
             session.close()
-            return make_response({"status": 400, "message": "Employee Name is a mandatory field"}, 400)
+            return make_response({"status": HTTP_RES_CLIENT_ERROR, "message": "Employee Name is a mandatory field"},
+                                 HTTP_RES_CLIENT_ERROR)
 
         else:
             employee = Employee(id=request_data["id"], employee_name=request_data["employee_name"],
@@ -135,10 +142,12 @@ def register_employees():
             session.close()
 
             # RETURN POST ON POSTMAN
-            return make_response(jsonify({"status": 201, "message": "Employee added successfully :)"}, request_data), 201)
+            return make_response(jsonify({"status": HTTP_RES_SUCCESSFUL, "message": "Employee added successfully :)"},
+                                         request_data), HTTP_RES_SUCCESSFUL)
     except Exception:
         session.rollback()
-        return make_response(jsonify({"status": 400, "message": "Column 'EMPLOYEE NAME' cannot be null"}), 400)
+        return make_response(jsonify({"status": HTTP_RES_CLIENT_ERROR,
+                                      "message": "Column 'EMPLOYEE NAME' cannot be null"}), HTTP_RES_CLIENT_ERROR)
 
 
 # Registrar Indicações — OK
@@ -150,7 +159,8 @@ def register_recommendations():
     try:
         if "recommendation" not in request_data:
             session.close()
-            return make_response({"status": 400, "message": "Recommendation is a mandatory field"}, 400)
+            return make_response({"status": HTTP_RES_CLIENT_ERROR, "message": "Recommendation is a mandatory field"},
+                                 HTTP_RES_CLIENT_ERROR)
 
         else:
             recommendations = Recommendation(id=request_data["id"], recommendation=request_data["recommendation"])
@@ -162,10 +172,12 @@ def register_recommendations():
 
             # RETURN ON POSTMAN
             return make_response(
-                jsonify({"status": 200, "message": "Recommendation added successfully :)"}, request_data), 200)
+                jsonify({"status": HTTP_RES_SUCCESSFUL, "message": "Recommendation added successfully :)"},
+                        request_data), HTTP_RES_SUCCESSFUL)
     except Exception:
         session.rollback()
-        return make_response(jsonify({"status": 200, "message": "Column 'RECOMMENDATION' cannot be null"}), 200)
+        return make_response(jsonify({"status": HTTP_RES_CLIENT_ERROR, "message": "Column 'RECOMMENDATION' cannot be "
+                             "null"}), HTTP_RES_CLIENT_ERROR)
 
 
 # Retornar uma lista de equipes e respectivos funcionários — OK
