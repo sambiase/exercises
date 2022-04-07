@@ -177,36 +177,58 @@ def register_recommendations():
     except Exception:
         session.rollback()
         return make_response(jsonify({"status": HTTP_RES_CLIENT_ERROR, "message": "Column 'RECOMMENDATION' cannot be "
-                             "null"}), HTTP_RES_CLIENT_ERROR)
+                                                                                  "null"}), HTTP_RES_CLIENT_ERROR)
 
 
 # Retornar uma lista de equipes e respectivos funcionários — OK
 @app.route('/teams', methods=['GET'])
 def get_all_teams():
     # team_employees = EmployeeTeamSchemaNested()
-    res = session.query(Team).join(Employee).filter(Team.id == Employee.team_id).order_by(Team.id).all()
     # res_json = team_employees.dump(res, many=True)
-    res2 = json.dumps(res, default=str)
-    # return make_response(jsonify(res_json), 200)
-    return make_response(jsonify(res2), 200)
+    if request.args.get('id'):
+        req = request.args.get('id')
+        res = session.query(Team).join(Employee).filter(Team.id == req).order_by(Team.id).all()
+        res_json = json.dumps(res, default=str)
+        return make_response(jsonify(res_json), 200)
+
+    else:
+        res = session.query(Team).join(Employee).filter(Team.id == Employee.team_id).order_by(Team.id).all()
+        res_json = json.dumps(res, default=str)
+        return make_response(jsonify(res_json), 200)
 
 
 # Retornar uma lista de indicações — OK
 @app.route('/recommendations', methods=['GET'])
 def get_all_recommendations():
     reco_schema = RecoSchema()
-    res = session.query(Recommendation).all()
-    res_json = reco_schema.dump(res, many=True)
-    return make_response(jsonify(res_json), 200)
+
+    if request.args.get('id'):
+        req = request.args.get('id')
+        res = session.query(Recommendation).filter(Recommendation.id == req).all()
+        res_json = reco_schema.dump(res, many=True)
+        return make_response(jsonify(res_json), 200)
+
+    else:
+        res = session.query(Recommendation).order_by(Recommendation.id).all()
+        res_json = reco_schema.dump(res, many=True)
+        return make_response(jsonify(res_json), 200)
 
 
 # Retornar quais funcionários realizaram indicações — OK
 @app.route('/recommendations/employees', methods=['GET'])
 def get_all_employees_with_recommendations():
     employees_reco = EmployeesRecoSchema()
-    res = session.query(Recommendation).join(Employee).filter(Recommendation.id == Employee.team_id).all()
-    res_json = employees_reco.dump(res, many=True)
-    return make_response(jsonify(res_json), 200)
+
+    if request.args.get('id'):
+        req = request.args.get('id')
+        res = session.query(Recommendation).join(Employee).filter(Recommendation.id == req).all()
+        res_json = employees_reco.dump(res, many=True)
+        return make_response(jsonify(res_json), 200)
+
+    else:
+        res = session.query(Recommendation).join(Employee).filter(Recommendation.id == Employee.team_id).all()
+        res_json = employees_reco.dump(res, many=True)
+        return make_response(jsonify(res_json), 200)
 
 
 if __name__ == "__main__":
