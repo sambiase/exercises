@@ -185,7 +185,6 @@ def register_recommendations():
 def get_all_teams():
     # team_employees = EmployeeTeamSchemaNested()
     # res_json = team_employees.dump(res, many=True)
-
     if request.args.get('id'):
         req = request.args.get('id')
         res = session.query(Team).join(Employee).filter(Team.id == req).order_by(Team.id).all()
@@ -201,8 +200,8 @@ def get_all_teams():
 # Retornar uma lista de indicações — OK
 @app.route('/recommendations', methods=['GET'])
 def get_all_recommendations():
-
     reco_schema = RecoSchema()
+
     if request.args.get('id'):
         req = request.args.get('id')
         res = session.query(Recommendation).filter(Recommendation.id == req).all()
@@ -219,9 +218,17 @@ def get_all_recommendations():
 @app.route('/recommendations/employees', methods=['GET'])
 def get_all_employees_with_recommendations():
     employees_reco = EmployeesRecoSchema()
-    res = session.query(Recommendation).join(Employee).filter(Recommendation.id == Employee.team_id).all()
-    res_json = employees_reco.dump(res, many=True)
-    return make_response(jsonify(res_json), 200)
+
+    if request.args.get('id'):
+        req = request.args.get('id')
+        res = session.query(Recommendation).join(Employee).filter(Recommendation.id == req).all()
+        res_json = employees_reco.dump(res, many=True)
+        return make_response(jsonify(res_json), 200)
+
+    else:
+        res = session.query(Recommendation).join(Employee).filter(Recommendation.id == Employee.team_id).all()
+        res_json = employees_reco.dump(res, many=True)
+        return make_response(jsonify(res_json), 200)
 
 
 if __name__ == "__main__":
