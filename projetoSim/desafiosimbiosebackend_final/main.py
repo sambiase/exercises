@@ -113,7 +113,9 @@ def register_teams():
             # RETURN POST ON POSTMAN
             return make_response(jsonify({"status": HTTP_RES_SUCCESSFUL, "message": "Team added successfully :)"},
                                          request_data), HTTP_RES_SUCCESSFUL)
-    except Exception:  # checks if value is NULL
+
+    # CHECK IF VALUE IS NULL
+    except Exception:
         session.rollback()
         return make_response(jsonify({"status": HTTP_RES_CLIENT_ERROR, "message": "Column 'TEAM_NAME' cannot be null"}),
                              HTTP_RES_CLIENT_ERROR)
@@ -144,6 +146,8 @@ def register_employees():
             # RETURN POST ON POSTMAN
             return make_response(jsonify({"status": HTTP_RES_SUCCESSFUL, "message": "Employee added successfully :)"},
                                          request_data), HTTP_RES_SUCCESSFUL)
+
+    # CHECK IF VALUE IS NULL
     except Exception:
         session.rollback()
         return make_response(jsonify({"status": HTTP_RES_CLIENT_ERROR,
@@ -174,6 +178,8 @@ def register_recommendations():
             return make_response(
                 jsonify({"status": HTTP_RES_SUCCESSFUL, "message": "Recommendation added successfully :)"},
                         request_data), HTTP_RES_SUCCESSFUL)
+
+    # CHECK IF VALUE IS NULL
     except Exception:
         session.rollback()
         return make_response(jsonify({"status": HTTP_RES_CLIENT_ERROR, "message": "Column 'RECOMMENDATION' cannot be "
@@ -183,8 +189,7 @@ def register_recommendations():
 # Retornar uma lista de equipes e respectivos funcionários — OK
 @app.route('/teams', methods=['GET'])
 def get_all_teams():
-    # team_employees = EmployeeTeamSchemaNested()
-    # res_json = team_employees.dump(res, many=True)
+
     if request.args.get('id'):
         req = request.args.get('id')
         res = session.query(Team).join(Employee).filter(Team.id == req).order_by(Team.id).all()
