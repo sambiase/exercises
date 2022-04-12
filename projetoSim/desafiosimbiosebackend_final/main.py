@@ -89,7 +89,7 @@ class EmployeesRecoSchema(SQLAlchemyAutoSchema):
         include_relationships = True
 
 
-# Registrar Equipes(times) - OK
+# REGISTRAR EQUIPES (TIMES)
 @app.route('/teams', methods=['POST'])
 def register_teams():
     # DATA GOTTEN FROM POST BODY JSON - POSTMAN
@@ -121,7 +121,7 @@ def register_teams():
                              HTTP_RES_CLIENT_ERROR)
 
 
-# Registrar Funcionarios - OK
+# REGISTRAR FUNCIONÁRIOS (EMPLOYEES)
 @app.route('/employees', methods=['POST'])
 def register_employees():
     # DATA GOTTEN FROM POST BODY JSON - POSTMAN
@@ -154,10 +154,10 @@ def register_employees():
                                       "message": "Column 'EMPLOYEE NAME' cannot be null"}), HTTP_RES_CLIENT_ERROR)
 
 
-# Registrar Indicações — OK
+# REGISTRAR INDICAÇÕES (RECOMMENDATIONS)
 @app.route('/recommendations', methods=['POST'])
 def register_recommendations():
-    # data gotten from POST BODY Json - Postman
+    # DATA GOTTEN FROM POST BODY JSON - POSTMAN
     request_data = request.get_json()
 
     try:
@@ -174,7 +174,7 @@ def register_recommendations():
             session.commit()
             session.close()
 
-            # RETURN ON POSTMAN
+            # RETURN POST ON POSTMAN
             return make_response(
                 jsonify({"status": HTTP_RES_SUCCESSFUL, "message": "Recommendation added successfully :)"},
                         request_data), HTTP_RES_SUCCESSFUL)
@@ -186,7 +186,7 @@ def register_recommendations():
                                                                                   "null"}), HTTP_RES_CLIENT_ERROR)
 
 
-# Retornar uma lista de equipes e respectivos funcionários — OK
+# Retornar uma lista de equipes e respectivos funcionários
 @app.route('/teams', methods=['GET'])
 def get_all_teams():
 
@@ -202,7 +202,7 @@ def get_all_teams():
         return make_response(jsonify(res_json), 200)
 
 
-# Retornar uma lista de indicações — OK
+# Retornar uma lista de indicações
 @app.route('/recommendations', methods=['GET'])
 def get_all_recommendations():
     reco_schema = RecoSchema()
@@ -219,7 +219,7 @@ def get_all_recommendations():
         return make_response(jsonify(res_json), 200)
 
 
-# Retornar quais funcionários realizaram indicações — OK
+# Retornar quais funcionários realizaram indicações
 @app.route('/recommendations/employees', methods=['GET'])
 def get_all_employees_with_recommendations():
     employees_reco = EmployeesRecoSchema()

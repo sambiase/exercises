@@ -24,4 +24,4 @@ while option.upper() == 'S':
     else:
         print(f'Alternativa Incorreta')
 
-    option = str(input ('Continuar? (S) (N)\t'))
+    option = str(input('Continuar? (S) (N)\t'))
