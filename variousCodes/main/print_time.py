@@ -1,0 +1,3 @@
+
+def time():
+    print('Flamengo')
