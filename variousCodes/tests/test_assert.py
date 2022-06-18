@@ -1,4 +1,4 @@
 
 def test_name():
     nome = 'Fla'
-    assert nome is not ''
+    assert nome == 'Fla'

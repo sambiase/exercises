@@ -15,6 +15,7 @@ flask-sqlalchemy = "*"
 pymysql = "*"
 flake8 = "*"
 gunicorn = "*"
+pytest = "*"
 
 [dev-packages]
 
